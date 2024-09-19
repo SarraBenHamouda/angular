@@ -1,0 +1,168 @@
+
+  * {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all 0.2s linear;
+  }
+
+  .container {
+    max-width: 1000px;
+  }
+
+  /* Navigation */
+  section nav ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  section nav li {
+    display: inline-block;
+    padding: 0 10px;
+  }
+
+  section nav li a {
+    text-decoration: none;
+    color: #000;
+    padding: 0 10px;
+  }
+
+  section nav li a:hover {
+    color: #af082c;
+  }
+
+  section nav .social_icon i:hover {
+    color: #af082c;
+    cursor: pointer;
+  }
+
+  /* Card Styling */
+  .cold-pink {
+    background-color: #ffffff;
+  }
+
+  .custom-card {
+    border-radius: 12px;
+    background-color: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .custom-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  .card-header {
+    border-radius: 12px 12px 0 0;
+  }
+
+  /* Button Styling */
+  .custom-btn {
+    border-radius: 20px;
+    padding: 8px 20px;
+  }
+
+  .btn-primary {
+    background-color: #ff85a2;
+    border-color: #ff85a2;
+  }
+
+  .btn-primary:hover {
+    background-color: #e67490;
+    border-color: #e67490;
+  }
+
+  .btn-secondary {
+    background-color: #cccccc;
+    border-color: #cccccc;
+  }
+
+  .btn-secondary:hover {
+    background-color: #b0b0b0;
+    border-color: #b0b0b0;
+  }
+
+  /* Form Styling */
+  form {
+    margin: 20px auto;
+    padding: 30px;
+    width: 80%;
+    color: black;
+    cursor: pointer;
+    box-shadow: 0 0 8px #550B17;
+  }
+
+  form i:hover {
+    color: rgb(253, 180, 42);
+    cursor: pointer;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  input[type="text"], input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  input[type="submit"] {
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 0 8px #550B17;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #ccc;
+  }
+
+  /* Table Styling */
+  .custom-table {
+    font-size: 14px;
+    color: #333;
+  }
+
+  .custom-table th, .custom-table td {
+    padding: 12px 15px;
+    text-align: center;
+  }
+
+  .custom-table thead th {
+    font-weight: bold;
+    background-color: #ff85a2;
+    color: #fff;
+    border-bottom: 2px solid #ddd;
+  }
+
+  .custom-table tbody tr {
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease;
+  }
+
+  .custom-table tbody tr:hover {
+    background-color: #ffe6ed;
+  }
+
+  .custom-table tbody tr:nth-child(even) {
+    background-color: #f1f1f1;
+  }
+
+  .custom-table td, .custom-table th {
+    border: 1px solid #dee2e6;
+  }
+
+  .card-body {
+    background-color: #f1f1f1;
+  }

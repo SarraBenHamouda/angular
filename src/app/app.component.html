@@ -1,0 +1,76 @@
+<!-- Main Content -->
+<div class="container py-4">
+  <div class="row justify-content-center">
+    <!-- New Employee Section (Left) -->
+    <div class="col-lg-4 order-lg-2">
+      <div class="card shadow-sm custom-card">
+        <div class="card-header cold-pink text-white text-center">
+          <h5 class="mb-0">New Employee</h5>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="employeeForm" (ngSubmit)="onSave()">
+            <div class="mb-4">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" formControlName="name" class="form-control custom-input" placeholder="Enter Name" required>
+            </div>
+            <div class="mb-4">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" formControlName="email" class="form-control custom-input" placeholder="name@example.com" required>
+            </div>
+            <div class="mb-4">
+              <label for="contact" class="form-label">Contact</label>
+              <input type="text" formControlName="contactNo" class="form-control custom-input" placeholder="Enter Contact No" required>
+            </div>
+            <div class="mb-4">
+              <label for="city" class="form-label">City</label>
+              <input type="text" formControlName="city" class="form-control custom-input" placeholder="Enter City" required>
+            </div>
+            <div class="d-flex justify-content-between">
+              <button type="reset" class="btn btn-secondary custom-btn">Reset</button>
+              <button type="submit" class="btn btn-primary custom-btn">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Employee List Section (Right) -->
+    <div class="col-lg-8 order-lg-1">
+      <div class="card shadow-sm custom-card">
+        <div class="card-header bg-success text-white text-center">
+          <h5 class="mb-0">Employee List</h5>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered table-hover custom-table">
+              <thead class="bg-success text-white">
+                <tr>
+                  <th scope="col">Sr No</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Contact No</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">City</th>
+                  <th scope="col">Actions</th> <!-- Added Actions column -->
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Use Angular *ngFor directive to loop through employees -->
+                <tr *ngFor="let item of employeeList; let i = index">
+                  <td>{{i + 1}}</td>
+                  <td>{{item.name}}</td>
+                  <td>{{item.contactNo}}</td>
+                  <td>{{item.email}}</td>
+                  <td>{{item.city}}</td>
+                  <td>
+                    <button class="btn btn-primary" (click)="editEmployee(i)">Edit</button>
+                    <button class="btn btn-danger" (click)="deleteEmployee(i)">Delete</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
