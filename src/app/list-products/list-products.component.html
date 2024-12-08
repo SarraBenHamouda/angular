@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div
+      *ngFor="let product of listProducts"
+      class="col-md-4"
+      style="margin-bottom: 20px"
+    >
+      <app-card
+        [id]="product.id"
+        [title]="product.name"
+        [image]="product.image"
+        [description]="product.description"
+        [available]="true"
+      >
+      </app-card>
+    </div>
+  </div>
+</div>

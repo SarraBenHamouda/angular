@@ -1,0 +1,17 @@
+<img
+  (click)="getDescription(description)"
+  [src]="image"
+  [alt]="title"
+  class="img-fluid h-50 w-75"
+/>
+<h3 appHighlight>{{ title | uppercase }}</h3>
+
+<button *ngIf="available" class="btn btn-primary">Voir produits</button>
+<a [routerLink]="['/products']" [queryParams]="{ id: id }"
+  ><button class="btn btn-primary" *ngIf="available">Voir produits2</button></a
+>
+<button class="btn btn-primary" (click)="sendNotif()">Send Notif</button>
+<button class="btn btn-primary" (click)="ShortListDetails()">
+  {{ btnText }}
+</button>
+<span *ngIf="!available">Catégorie non disponible</span>

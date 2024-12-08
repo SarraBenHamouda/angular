@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <p>La date est : {{ myDate | date : "dd-MM-yyyy " }}</p>
+
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        id="find"
+        placeholder="Titre catégorie"
+        [(ngModel)]="titre"
+      />
+    </div>
+
+    <div
+      *ngFor="let category of categories | contains : titre : 'title'"
+      class="col-md-4"
+      style="margin-bottom: 20px"
+    >
+      <app-card
+        [title]="category.title"
+        [image]="category.image"
+        [description]="category.description"
+        [available]="category.available"
+        (notified)="getNotif($event)"
+        (Element)="addToShortList($event)"
+      ></app-card>
+    </div>
+  </div>
+</div>

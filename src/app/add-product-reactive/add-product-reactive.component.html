@@ -1,0 +1,61 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name">Name:</label>
+    <input id="name" formControlName="name" />
+    <div *ngIf="name.invalid && (name.dirty || name.touched)">
+      <div *ngIf="name.errors?.['required']">Name is required!</div>
+      <div *ngIf="name.errors?.['minlength']">
+        Name must be at least 5 characters long.
+      </div>
+      <div *ngIf="name.errors?.['pattern']">Name can only contain letters.</div>
+    </div>
+  </div>
+
+  <div>
+    <label for="image">Image:</label>
+    <input id="image" formControlName="image" />
+  </div>
+
+  <div>
+    <label for="categoryId">Category ID:</label>
+    <input id="categoryId" formControlName="categoryId" />
+    <div *ngIf="categoryId.invalid && (categoryId.dirty || categoryId.touched)">
+      <div *ngIf="categoryId.errors?.['required']">
+        Category ID is required!
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <label for="description">Description:</label>
+    <textarea id="description" formControlName="description"></textarea>
+  </div>
+
+  <div>
+    <label for="price">Price:</label>
+    <input id="price" formControlName="price" />
+    <div *ngIf="price.invalid && (price.dirty || price.touched)">
+      <div *ngIf="price.errors?.['required']">Price is required!</div>
+      <div *ngIf="price.errors?.['pattern']">
+        Price can only contain numbers and points.
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <label for="brand">Brand:</label>
+    <input id="brand" formControlName="brand" />
+  </div>
+
+  <div>
+    <label for="promotion">Promotion:</label>
+    <input id="promotion" formControlName="promotion" />
+    <div *ngIf="promotion.invalid && (promotion.dirty || promotion.touched)">
+      <div *ngIf="promotion.errors?.['pattern']">
+        Promotion must be a number between 0 and 100.
+      </div>
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="myForm.invalid">Save</button>
+</form>

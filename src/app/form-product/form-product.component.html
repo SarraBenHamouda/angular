@@ -1,0 +1,97 @@
+<form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)" novalidate>
+  <div>
+    <label for="name">Name:</label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      ngModel
+      required
+      minlength="5"
+      pattern="[a-zA-Z]*"
+    />
+    <div
+      *ngIf="
+          productForm.submitted && productForm.controls['name']?.errors?.['required']
+        "
+    >
+      Name is required.
+    </div>
+    <div
+      *ngIf="
+          productForm.submitted && productForm.controls['name']?.errors?.['minlength']
+        "
+    >
+      Name must be at least 5 characters long.
+    </div>
+    <div
+      *ngIf="
+          productForm.submitted && productForm.controls['name']?.errors?.['pattern']
+        "
+    >
+      Name can only contain letters.
+    </div>
+  </div>
+  <div>
+    <label for="categoryId">Category ID:</label>
+    <input type="number" id="categoryId" name="categoryId" ngModel required />
+    <div
+      *ngIf="
+          productForm.submitted &&
+          productForm.controls['categoryId']?.errors?.['required']
+        "
+    >
+      Category ID is required.
+    </div>
+  </div>
+  <div>
+    <label for="price">Price:</label>
+    <input
+      type="text"
+      id="price"
+      name="price"
+      ngModel
+      required
+      pattern="^\d+(\.\d+)?$"
+    />
+    <div
+      *ngIf="
+          productForm.submitted && productForm.controls['price']?.errors?.['required']
+        "
+    >
+      Price is required.
+    </div>
+    <div
+      *ngIf="
+          productForm.submitted && productForm.controls['price']?.errors?.['pattern']
+        "
+    >
+      Price must be a valid number.
+    </div>
+  </div>
+  <div>
+    <label for="promotion">Promotion:</label>
+    <input
+      type="text"
+      id="promotion"
+      name="promotion"
+      ngModel
+      pattern="^(0|[1-9][0-9]?)$"
+    />
+    <div
+      *ngIf="
+          productForm.submitted && productForm.controls['promotion']?.errors?.['pattern']
+        "
+    >
+      Promotion must be a number between 0 and 100.
+    </div>
+  </div>
+  <div>
+    <label for="image">Image URL:</label>
+    <input type="text" id="image" name="image" ngModel />
+  </div>
+  <div>
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" ngModel></textarea>
+  </div>
+</form>
